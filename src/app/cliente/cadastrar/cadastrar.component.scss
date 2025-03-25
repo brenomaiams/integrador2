@@ -1,0 +1,43 @@
+
+.container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* Botão Salvar - Azul */
+.save-button {
+  background-color: #1976d2; /* Azul do Material */
+  color: white !important;
+  
+  &:hover {
+    background-color: #1565c0; /* Azul mais escuro no hover */
+  }
+}
+
+/* Botão Cancelar - Vermelho */
+.cancel-button {
+  background-color: #d32f2f; /* Vermelho do Material */
+  color: white !important;
+  
+  &:hover {
+    background-color: #b71c1c; /* Vermelho mais escuro no hover */
+  }
+}
+
+/* Ícones dos botões */
+.button-icon {
+  color: white !important;
+  margin-right: 8px;
+}

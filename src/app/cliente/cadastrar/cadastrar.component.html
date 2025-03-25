@@ -1,0 +1,45 @@
+<mat-toolbar color="primary">
+  <span>Cadastro de Clientes</span>
+
+  <button mat-button routerLink="/clientes/lista">
+    <mat-icon>list</mat-icon>
+    Lista
+  </button>
+</mat-toolbar>
+
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Novo Cliente</mat-card-title>
+      <mat-card-subtitle>Preencha os dados abaixo</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Nome completo</mat-label>
+          <input matInput placeholder="Ex: João Silva" required>
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Idade</mat-label>
+          <input matInput type="number" placeholder="Ex: 25" required>
+          <mat-icon matSuffix>numbers</mat-icon>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button mat-raised-button color="warn" class="cancel-button">
+        <mat-icon class="button-icon">cancel</mat-icon>
+        Cancelar
+      </button>
+      
+      <button mat-raised-button color="primary" class="save-button">
+        <mat-icon class="button-icon">save</mat-icon>
+        Salvar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
