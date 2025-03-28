@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
+import { MatCheckboxModule } from '@angular/material/checkbox'; // Importar MatCheckboxModule
 
 import { AppComponent } from './app.component';
 import { ListaClientesComponent } from './features/clientes/lista/lista-clientes/lista-clientes.component';
@@ -19,19 +20,20 @@ import { CadastrarComponent } from './cliente/cadastrar/cadastrar.component';
   declarations: [
     AppComponent,
     ListaClientesComponent,
-    CadastrarComponent // Adicione esta linha
+    CadastrarComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule, // Use o AppRoutingModule
+    AppRoutingModule,
     // Angular Material
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
     MatCardModule,
     MatInputModule,
-    MatTableModule 
+    MatTableModule,
+    MatCheckboxModule // Adicione esta linha
   ],
   providers: [],
   bootstrap: [AppComponent]
