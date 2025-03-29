@@ -1,6 +1,5 @@
 <mat-toolbar color="primary">
   <span>Cadastro de Clientes</span>
-
   <button mat-button routerLink="/clientes/lista">
     <mat-icon>list</mat-icon>
     Lista
@@ -15,36 +14,46 @@
     </mat-card-header>
 
     <mat-card-content>
-      <form>
+      <form #form="ngForm" (ngSubmit)="salvar(form)">
+
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Nome completo</mat-label>
-          <input matInput placeholder="Ex: João Silva" required>
+          <input matInput placeholder="Ex: João Silva" [(ngModel)]="nome" name="nome" required #nome="ngModel">
           <mat-icon matSuffix>person</mat-icon>
+          <mat-error *ngIf="nome.invalid && nome.touched">Nome é obrigatório</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Idade</mat-label>
-          <input matInput type="number" placeholder="Ex: 25" required>
+          <input matInput type="number" placeholder="Ex: 25" [(ngModel)]="idade" name="idade" required #idade="ngModel">
           <mat-icon matSuffix>numbers</mat-icon>
+          <mat-error *ngIf="idade.invalid && idade.touched">Idade é obrigatória</mat-error>
         </mat-form-field>
 
-        <!-- Checkbox para aceitar os termos -->
-        <mat-checkbox>
+        <mat-checkbox [(ngModel)]="aceitoTermos" name="aceitoTermos" required #aceitoTermos="ngModel">
           Aceito os termos e condições
         </mat-checkbox>
+        <mat-error *ngIf="!aceitoTermos.valid && aceitoTermos.touched">Você precisa aceitar os termos</mat-error>
+
+        <mat-radio-group [(ngModel)]="genero" name="genero" aria-label="Escolha o gênero" class="full-width" required #genero="ngModel">
+          <mat-radio-button value="masculino">Masculino</mat-radio-button>
+          <mat-radio-button value="feminino">Feminino</mat-radio-button>
+          <mat-radio-button value="outro">Outro</mat-radio-button>
+        </mat-radio-group>
+        <mat-error *ngIf="genero.invalid && genero.touched">Escolha o gênero</mat-error>
+
+        <mat-card-actions align="end">
+          <button mat-raised-button color="warn" class="cancel-button">
+            <mat-icon class="button-icon">cancel</mat-icon>
+            Cancelar
+          </button>
+
+          <button mat-raised-button color="primary" class="save-button" type="submit" [disabled]="form.invalid">
+            <mat-icon class="button-icon">save</mat-icon>
+            Salvar
+          </button>
+        </mat-card-actions>
       </form>
     </mat-card-content>
-
-    <mat-card-actions align="end">
-      <button mat-raised-button color="warn" class="cancel-button">
-        <mat-icon class="button-icon">cancel</mat-icon>
-        Cancelar
-      </button>
-      
-      <button mat-raised-button color="primary" class="save-button">
-        <mat-icon class="button-icon">save</mat-icon>
-        Salvar
-      </button>
-    </mat-card-actions>
   </mat-card>
 </div>
