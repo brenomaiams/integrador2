@@ -6,7 +6,8 @@ import { ListaClientesComponent } from './features/clientes/lista/lista-clientes
 const routes: Routes = [
   { path: 'clientes/cadastro', component: CadastrarComponent },
   { path: 'clientes/lista', component: ListaClientesComponent },
-  { path: 'clientes', redirectTo: 'clientes/lista', pathMatch: 'full' }
+  { path: 'clientes', redirectTo: 'clientes/cadastro', pathMatch: 'full' },  // Alterado para redirecionar para cadastro
+  { path: '', redirectTo: 'clientes/cadastro', pathMatch: 'full' } // Definindo a rota inicial como clientes/cadastro
 ];
 
 @NgModule({

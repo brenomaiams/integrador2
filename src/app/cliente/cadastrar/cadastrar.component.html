@@ -34,6 +34,8 @@
           Aceito os termos e condições
         </mat-checkbox>
         <mat-error *ngIf="!aceitoTermos.valid && aceitoTermos.touched">Você precisa aceitar os termos</mat-error>
+        
+        
 
         <mat-radio-group [(ngModel)]="genero" name="genero" aria-label="Escolha o gênero" class="full-width" required #genero="ngModel">
           <mat-radio-button value="masculino">Masculino</mat-radio-button>
@@ -43,10 +45,11 @@
         <mat-error *ngIf="genero.invalid && genero.touched">Escolha o gênero</mat-error>
 
         <mat-card-actions align="end">
-          <button mat-raised-button color="warn" class="cancel-button">
+          <button mat-raised-button color="warn" class="cancel-button" (click)="cancelar()">
             <mat-icon class="button-icon">cancel</mat-icon>
             Cancelar
           </button>
+          
 
           <button mat-raised-button color="primary" class="save-button" type="submit" [disabled]="form.invalid">
             <mat-icon class="button-icon">save</mat-icon>
